@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&display=swap');
+
+
 body, html {
     box-sizing: border-box;
     margin: 0;
 }
 
 div.main {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     min-width: 300px;
     max-width: 1200px;
     width: 85vw;
@@ -14,7 +17,7 @@ div.main {
 }
 
 div.banner {
-    border:2px solid orange;
+    /* border:2px solid orange; */
     width: 100%;
     height: 25%;
     margin: 10px auto;
@@ -24,30 +27,110 @@ div.banner {
 }
 
 div.banner_img {
-    width: 33%;
-    border: 2px solid white;
-    padding: 20px;
+    width: 33.33%;
+    /* border: 2px solid white; */
+    /* padding: 20px; */
+    border-radius: inherit;
+}
+
+div.banner_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+#img_1 {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#img_2 {
+    border-radius: 0;
+}
+
+#img_3 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 div.offers {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 100%;
     height: 70%;
     margin: 10px auto;
     border-radius: 15px;
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     flex-wrap: wrap;
     overflow-y: auto;
 }
 
 div.offer_card {
-    background-color: #f1f1f1;
-    border: 2px solid orange;
+    background-color: #eeefff;
+    /* border: 2px solid orange; */
     min-width: 300px;
     border-radius: 15px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
     min-height: 200px;
+    max-width: 300px;
     text-align: center;
 }
+
+div.offer_card_img{
+    /* border: 3px solid rebeccapurple; */
+    height: 60%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+div.offer_card_img img {
+    /* border: 2px solid palegoldenrod; */
+    width: 100%;
+    height: 100%;
+    object-fit: unset;
+    border-radius: 15px 15px 0 0;
+    max-width: 500px;
+    max-height: 350px;
+}
+
+
+div.offer_card_content {
+    /* border: 1px solid red; */
+    height: 40%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-content:space-evenly;
+}
+
+div.offer_card_content div {
+    margin: 5px 0 5px 0;
+    padding: 3px;
+}
+
+span.title {
+    font-family: "Rubik Vinyl", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+span.price {
+    display: inline-block;
+    transform: rotate(-25deg);
+    color: red;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+div.offer_card_content_details {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+    
+    
+
+
+
