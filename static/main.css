@@ -23,7 +23,7 @@ div.banner {
     margin: 10px auto;
     border-radius: 15px;
     display: flex;
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
 }
 
 div.banner_img {
@@ -129,6 +129,25 @@ div.offer_card_content_details {
     font-weight: bold;
     font-style: italic;
 }
+
+div.contact {
+    height: 70vh;
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+
+div.contact a {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.none {
+    visibility: hidden;
+}
+
     
     
 
