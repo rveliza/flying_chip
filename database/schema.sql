@@ -5,6 +5,8 @@ CREATE TABLE cheapest_flights (
     time_now TEXT NOT NULL,
     cityCodeFrom TEXT NOT NULL,
     cityCodeTo TEXT NOT NULL,
+    cityFrom TEXT NOT NULL,
+    cityTo TEXT NOT NULL,
     deep_link TEXT NOT NULL,
     price INTEGER NOT NULL,
     nightsInDest INTEGER NOT NULL
