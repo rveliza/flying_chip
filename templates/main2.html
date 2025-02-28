@@ -26,7 +26,12 @@
             <div class="offer_card">
                 <a href="{{ flight['deep_link'] }}">
                 <div class="offer_card_img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg" alt="">
+                    {% if flight['cityCodeTo'] in dest_images %}
+
+                        <img src="{{ dest_images[flight['cityCodeTo']]['link'] }}" alt="">
+                    {% else %}
+                        <img src="/static/images/ChipLogo5.png" alt="">
+                    {% endif %}
                 </div>
                 <div class="offer_card_content">
                     <div class="offer_card_content_title"><span class="title"> {{ flight['cityTo'] }}</span> <span class="price">${{ flight['price'] }}</span></div>
