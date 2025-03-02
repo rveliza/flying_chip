@@ -14,7 +14,7 @@ def main():
     db = get_db()
     cur = db.execute('SELECT * FROM cheapest_flights')
     cheap_flights = cur.fetchall()
-    return render_template('main2.html', cheap_flights=cheap_flights, dest_images=dest_images)
+    return render_template('main.html', cheap_flights=cheap_flights, dest_images=dest_images)
 
 @app.route('/visa_usa')
 def visa_usa():

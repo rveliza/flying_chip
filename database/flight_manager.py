@@ -65,7 +65,8 @@ for destination in top_destinations:
                 data.append(flight_info)
 
 
-con = sqlite3.connect("./database/flying_chip.db")
+# con = sqlite3.connect("./database/flying_chip.db")
+con = sqlite3.connect('/home/reyner/flying_chip/database/flying_chip.db')
 cur = con.cursor()
 
 
