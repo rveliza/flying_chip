@@ -1,5 +1,6 @@
 from flask import Flask, render_template, g
 from database.database import get_db
+from database.dest_images import dest_images
 
 app = Flask(__name__)
 
@@ -10,7 +11,10 @@ def close_db(error):
 
 @app.route('/')
 def main():
-    return render_template('main.html')
+    db = get_db()
+    cur = db.execute('SELECT * FROM cheapest_flights')
+    cheap_flights = cur.fetchall()
+    return render_template('main2.html', cheap_flights=cheap_flights, dest_images=dest_images)
 
 @app.route('/visa_usa')
 def visa_usa():

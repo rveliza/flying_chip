@@ -1,5 +1,5 @@
 from flask import Flask, render_template, g
-from database.database import get_db
+from database.database2 import get_db
 from database.dest_images import dest_images
 
 app = Flask(__name__)
