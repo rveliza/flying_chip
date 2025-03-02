@@ -44,12 +44,12 @@ for destination in top_destinations:
             params['max_fly_duration'] = hours # max duration in hours
 
             pprint(f"Getting data for {params['fly_to']}")
-        
+
             response = requests.get(search_by_query_endpoint, headers=headers, params=params).json()
 
             try:
                 cheapest_data = response['data'][0]
-            
+
             except IndexError:
                 print(f"{params['fly_to']} not available with this criteria")
 
