@@ -1,6 +1,7 @@
 from flask import Flask, render_template, g
 from database.database import get_db
 from database.dest_images import dest_images
+from datetime import datetime as dt
 
 app = Flask(__name__)
 
@@ -11,8 +12,11 @@ def close_db(error):
 
 @app.route('/')
 def main():
+    today = dt.now()
+    today_f = today.strftime("%Y-%m-%d")
     db = get_db()
-    cur = db.execute('SELECT * FROM cheapest_flights')
+    cur = db.execute(f'SELECT * FROM cheapest_flights WHERE time_now = "{today_f}"')
+    # cur = db.execute(f'SELECT * FROM cheapest_flights')
     cheap_flights = cur.fetchall()
     return render_template('main.html', cheap_flights=cheap_flights, dest_images=dest_images)
 

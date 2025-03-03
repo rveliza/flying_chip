@@ -54,7 +54,7 @@ for destination in top_destinations:
                 print(f"{params['fly_to']} not available with this criteria")
 
             else:
-                time_now = str(dt.now())
+                time_now = str(dt.now().date())
                 deep_link = response['data'][0]['deep_link']
                 city_to = response['data'][0]['cityTo']
                 price = response['data'][0]['price']
