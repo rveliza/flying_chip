@@ -3,6 +3,7 @@ from database.database import get_db
 from database.dest_images import dest_images
 from datetime import datetime as dt
 
+
 app = Flask(__name__)
 
 @app.teardown_appcontext
