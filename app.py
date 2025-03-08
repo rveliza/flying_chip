@@ -17,7 +17,6 @@ def main():
     today_f = today.strftime("%Y-%m-%d")
     db = get_db()
     cur = db.execute(f'SELECT * FROM cheapest_flights WHERE time_now = "{today_f}"')
-    # cur = db.execute(f'SELECT * FROM cheapest_flights')
     cheap_flights = cur.fetchall()
     return render_template('main.html', cheap_flights=cheap_flights, dest_images=dest_images)
 

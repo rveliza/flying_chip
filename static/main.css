@@ -124,6 +124,10 @@ span.price {
     font-size: 2em;
 }
 
+span.level {
+    transform: rotate(0deg);
+}
+
 div.offer_card_content_details {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;

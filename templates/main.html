@@ -6,12 +6,7 @@
     <title>FlyingChip</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-        !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-        },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-        a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-        twq('config','p66fx');
-        </script>
+
 </head>
 <body>
     <div class="main">
@@ -21,8 +16,24 @@
             <div class="banner_img"><img src="../static/images/Sim1.png" alt="" id="img_3"></div>
         </div>
         <div class="offers">
+            {% set counter = namespace(value=1) %}
             {% for flight in cheap_flights %}
             {% set nights = flight['nightsInDest'] | int %}
+            {% if counter.value % 5 == 0 %}
+            <div class="offer_card">
+                <a href="{{ url_for('visa_usa') }}">
+                <div class="offer_card_img">
+                    <img src="../static/images/USVISA.png" alt="">
+                </div>
+                <div class="offer_card_content">
+                    <div class="offer_card_content_title"><span class="title"> VISA USA</span> 
+                    <span class="price level">Trámite y citas</span></div>
+                    <div class="offer_card_content_details">Servicio personalizado</div>
+                    {% set counter.value = counter.value + 1 %}
+                </div></a>
+            </div>
+            {% endif %}
+
             <div class="offer_card">
                 <a href="{{ flight['deep_link'] }}">
                 <div class="offer_card_img">
@@ -36,6 +47,7 @@
                 <div class="offer_card_content">
                     <div class="offer_card_content_title"><span class="title"> {{ flight['cityTo'] }}</span> <span class="price">${{ flight['price'] }}</span></div>
                     <div class="offer_card_content_details">{{ nights + 1 }} días / {{ nights }} noches</div>
+                    {% set counter.value = counter.value + 1 %}
                 </div></a>
             </div>
             {% endfor %}
